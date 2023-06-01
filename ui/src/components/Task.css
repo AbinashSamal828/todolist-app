@@ -1,0 +1,23 @@
+.task{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(57, 61, 61);
+    margin-top:20px ;
+    border-radius: 10px;
+}
+.desc{
+    display: flex;
+    padding: 1rem;
+}
+.options{
+    display: flex;
+    padding: 1rem;
+}
+.desc div,.options div{
+    padding-left:5px;
+}
+.options div{
+    padding: 0.3rem;
+}

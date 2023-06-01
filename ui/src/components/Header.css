@@ -1,0 +1,18 @@
+*{
+    color: white;
+    font-size: 20px;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.hor{
+    display: flex;
+}
+.hor div{
+    padding-left: 20px;
+}
+.logout{
+    margin-right: 1em;
+}
