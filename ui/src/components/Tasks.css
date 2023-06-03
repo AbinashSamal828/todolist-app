@@ -2,3 +2,7 @@
     overflow-y: scroll;
     height: 250px;
 }
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent; 
+}

@@ -1,36 +1,16 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "./Input.css";
-// import { BsCalendarDate } from "react-icons/bs";
+import { BsCalendarDate } from "react-icons/bs";
 const Input = (props) => {
-  const [currtitle, setTitle] = useState("");
-  const [currdate, setDate] = useState("");
-  const userid=localStorage.getItem("userid");
+  const [currtitle, setTitle] = useState(props.title);
+  const [currdate, setDate] = useState(props.dueDate);
   // console.log(props);
-  if (props.title && props.dueDate) {
-    setTitle(props.title);
-    setDate(props.dueDate);
-  }
   const onSubmitHandler = (e) => {
     e.preventDefault();
     // console.log(currtitle);
-    if ((currtitle == "")) {
-      toast.warn('Task can not be empty', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        });
-      return;
-    }
     props.addTask({
       id: Math.floor(Math.random() * 1000),
-      userid: userid,
+      userid: localStorage.getItem('userid'),
       title: currtitle,
       dueDate: currdate,
       completed: false,
@@ -62,7 +42,6 @@ const Input = (props) => {
         </div>
         <button type="submit">Add Task</button>
       </form>
-      <ToastContainer />
     </div>
   );
 };

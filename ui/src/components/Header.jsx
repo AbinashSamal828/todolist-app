@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import {BiLogOut} from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom'
 const Header = () => {
+  const Navigate=useNavigate();
+  const logOutHandler=()=>{
+    localStorage.removeItem('userid');
+    Navigate('/login');
+  }
   return (
     <div className='head'>
-        <div>Todolist</div>
+        <div id='title'>TODOLIST</div>
         <div className='hor'>
-            <div>username</div>
-            <div className='logout'><BiLogOut size={35}/></div>
+            <div>{localStorage.getItem('userid')}</div>
+            <div onClick={logOutHandler} className='logout'><BiLogOut size={30}/></div>
         </div>
     </div>
   )

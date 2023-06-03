@@ -21,3 +21,9 @@
 .options div{
     padding: 0.3rem;
 }
+.date{
+    font-weight: 100;
+    font-style: italic;
+    font-size: smaller;
+    padding: 5px;
+}
